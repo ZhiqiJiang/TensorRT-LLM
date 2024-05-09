@@ -60,6 +60,8 @@ auto constexpr kReturnGenerationLogitsTensorName = "return_generation_logits";
 auto constexpr kPromptEmbeddingTableName = "prompt_embedding_table";
 auto constexpr kPromptVocabSizeName = "prompt_vocab_size";
 auto constexpr kLoraTaskId = "lora_task_id";
+auto constexpr kSuppressTokensIds = "suppress_token_ids";
+auto constexpr kSuppressTokenScales = "suppress_token_scales";
 // weights for a lora adapter shape [ num_lora_modules_layers, D x Hi + Ho x D ]
 // where the last dimension holds the in / out adapter weights for the associated module (e.g. attn_qkv) and model layer
 // each of the in / out tensors are first flattened and then concatenated together in the format above.
@@ -195,6 +197,8 @@ public:
         inference_request::kLoraTaskId,
         inference_request::kLoraWeights,
         inference_request::kLoraConfig,
+        inference_request::kSuppressTokensIds,
+        inference_request::kSuppressTokenScales,
     };
 
 #define TENSOR_GETTER_SETTER(funcName, tensorName)                                                                     \
@@ -260,6 +264,8 @@ public:
     TENSOR_GETTER_SETTER(LoraTaskId, inference_request::kLoraTaskId)
     TENSOR_GETTER_SETTER(LoraWeights, inference_request::kLoraWeights)
     TENSOR_GETTER_SETTER(LoraConfig, inference_request::kLoraConfig)
+    TENSOR_GETTER_SETTER(SuppressTokensIds, inference_request::kSuppressTokensIds)
+    TENSOR_GETTER_SETTER(SuppressTokenScales, inference_request::kSuppressTokenScales)
 
 #undef TENSOR_GETTER_SETTER
 
