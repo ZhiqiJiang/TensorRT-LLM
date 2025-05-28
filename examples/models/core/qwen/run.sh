@@ -1,0 +1,1 @@
+python3 examples/run.py --engine_dir ./Qwen2-7B-Instruct_trt  --max_output_len 100 --tokenizer_dir Qwen2-7B-Instruct --input_text "如何复现deepseek r1的知识蒸馏"

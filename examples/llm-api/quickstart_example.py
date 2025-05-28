@@ -11,7 +11,7 @@ def main():
     ]
     sampling_params = SamplingParams(temperature=0.8, top_p=0.95)
 
-    llm = LLM(model="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+    llm = LLM(model="/root/TensorRT-LLM/Qwen2-7B-Instruct")
 
     outputs = llm.generate(prompts, sampling_params)
 

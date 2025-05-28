@@ -63,5 +63,6 @@ index f14934d1..eebfb8fc 100644
 EOF
 
 cd ${OLDPWD}
+export https_proxy=192.168.18.208:3128
 pip3 install /tmp/mpi4py-${MPI4PY_VERSION}
 rm -rf /tmp/mpi4py*
